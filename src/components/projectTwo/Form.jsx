@@ -39,7 +39,7 @@ const Form = () => {
     const lastNameNotValid = submitted && inputValue.lastName.trim().length === 0;
     const emailNotValid = submitted && !inputValue.email.includes('@');
     const passwordNotValid = submitted && inputValue.password.trim().length < 6;
-
+   // const formMessage = submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid;
 
     useEffect(() => {
         if (submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid) {
