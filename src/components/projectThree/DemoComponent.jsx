@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function ParentComponent() {
+function ParentComponent({children}) {
    const [count, setCount] = useState(0);
 
    const updateCount = () => {
@@ -12,7 +12,8 @@ function ParentComponent() {
      <div>
         <button onClick={updateCount}>Click {count}</button>
         {/* <ChildComponent /> */}
-        <MemoizedChildComponent />
+        {/* <MemoizedChildComponent /> */}
+        {children}
     </div>
    </>
    )
@@ -28,14 +29,16 @@ function ChildComponent() {
     );
 }
 
-const MemoizedChildComponent = React.memo(ChildComponent);
+//const MemoizedChildComponent = React.memo(ChildComponent);
 
 const DemoComponent = () => {
     return (
         <div>
             <h1>Demo Component</h1>
             <p>This is a demo component.</p>
-            <ParentComponent />
+            <ParentComponent>
+                <ChildComponent />
+            </ParentComponent>
         </div>
     );
 };
