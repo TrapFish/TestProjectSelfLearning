@@ -3,8 +3,10 @@
 // import Header from './components/projectOne/Header.jsx';
 
 //Project Two
-import Form from './components/projectTwo/Form.jsx';
+//import Form from './components/projectTwo/Form.jsx';
 
+//Project Three
+import DemoComponent from './components/projectThree/DemoComponent.jsx';
 export default function App() {
   return (
     <>
@@ -14,7 +16,8 @@ export default function App() {
         <AuthInputs />
       </main> */}
       {/* Project Two */}
-      <Form />
+      {/* <Form /> */}
+      <DemoComponent />
     </>
   );
 }
