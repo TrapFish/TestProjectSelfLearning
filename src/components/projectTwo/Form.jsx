@@ -10,7 +10,7 @@ const Form = () => {
     });
 
     const [submitted, setSubmitted] = useState(false);
-    const [submitMessage, setSubmitMessage] = useState(false);
+   // const [submitMessage, setSubmitMessage] = useState(false);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -31,7 +31,7 @@ const Form = () => {
                 password: '',
             });
             setSubmitted(false);
-            setSubmitMessage(false);
+          //  setSubmitMessage(false);
         }, 2000)
     };
 
@@ -39,13 +39,13 @@ const Form = () => {
     const lastNameNotValid = submitted && inputValue.lastName.trim().length === 0;
     const emailNotValid = submitted && !inputValue.email.includes('@');
     const passwordNotValid = submitted && inputValue.password.trim().length < 6;
-   // const formMessage = submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid;
+    const formMessage = submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid;
 
-    useEffect(() => {
-        if (submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid) {
-            setSubmitMessage(true);
-        }
-    }, [submitted, firstNameNotValid, lastNameNotValid, emailNotValid, passwordNotValid])
+    // useEffect(() => {
+    //     if (submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid) {
+    //         setSubmitMessage(true);
+    //     }
+    // }, [submitted, firstNameNotValid, lastNameNotValid, emailNotValid, passwordNotValid])
 
     return (
         <form onSubmit={handleSubmit}>
@@ -93,7 +93,8 @@ const Form = () => {
                 />
                 {passwordNotValid && <p className={classes.errorInForm}>Password is not valid</p>}
             </div>
-            {submitMessage && <p className={classes.successMessage}>Form submitted successfully</p>}
+            {/* {submitMessage && <p className={classes.successMessage}>Form submitted successfully</p>} */}
+            {formMessage && <p className={classes.successMessage}>Form submitted successfully</p>}
             <button type="submit">Submit</button>
         </form>
     );
