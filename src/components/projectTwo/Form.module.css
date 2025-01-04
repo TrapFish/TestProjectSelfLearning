@@ -1,3 +1,7 @@
 .errorInForm{
     color:#ff0000;
 }
+
+.successMessage{
+    color: chartreuse;
+}

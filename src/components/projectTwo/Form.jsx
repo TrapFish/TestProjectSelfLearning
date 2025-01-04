@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './Form.module.css';
 
 const Form = () => {
@@ -10,11 +10,12 @@ const Form = () => {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState(false);
 
     const handleChange = (event) => {
-        const {name , value} = event.target;
+        const { name, value } = event.target;
         setInputValue((prevInputValue) => {
-            return {...prevInputValue, [name]: value};
+            return { ...prevInputValue, [name]: value };
         });
     };
 
@@ -29,6 +30,8 @@ const Form = () => {
                 email: '',
                 password: '',
             });
+            setSubmitted(false);
+            setSubmitMessage(false);
         }, 2000)
     };
 
@@ -37,8 +40,13 @@ const Form = () => {
     const emailNotValid = submitted && !inputValue.email.includes('@');
     const passwordNotValid = submitted && inputValue.password.trim().length < 6;
 
-    console.log('Form submitted with value:', inputValue,submitted, firstNameNotValid, lastNameNotValid, emailNotValid, passwordNotValid);
-    
+
+    useEffect(() => {
+        if (submitted && !firstNameNotValid && !lastNameNotValid && !emailNotValid && !passwordNotValid) {
+            setSubmitMessage(true);
+        }
+    }, [submitted, firstNameNotValid, lastNameNotValid, emailNotValid, passwordNotValid])
+
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -83,8 +91,9 @@ const Form = () => {
                     value={inputValue.password}
                     onChange={handleChange}
                 />
-                   {passwordNotValid && <p className={classes.errorInForm}>Password is not valid</p>}
-                </div>
+                {passwordNotValid && <p className={classes.errorInForm}>Password is not valid</p>}
+            </div>
+            {submitMessage && <p className={classes.successMessage}>Form submitted successfully</p>}
             <button type="submit">Submit</button>
         </form>
     );
