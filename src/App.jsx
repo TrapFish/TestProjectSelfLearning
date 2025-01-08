@@ -6,7 +6,10 @@
 //import Form from './components/projectTwo/Form.jsx';
 
 //Project Three
-import DemoComponent from './components/projectThree/DemoComponent.jsx';
+// import DemoComponent from './components/projectThree/DemoComponent.jsx';
+
+//Project four
+import Demo from "./components/projectFour/Demo";
 export default function App() {
   return (
     <>
@@ -17,7 +20,11 @@ export default function App() {
       </main> */}
       {/* Project Two */}
       {/* <Form /> */}
-      <DemoComponent />
+      {/* Project Three */}
+      {/* <DemoComponent /> */}
+
+      {/* Project Four */}
+      <Demo />
     </>
   );
 }
