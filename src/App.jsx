@@ -9,7 +9,13 @@
 // import DemoComponent from './components/projectThree/DemoComponent.jsx';
 
 //Project four
-import Demo from "./components/projectFour/Demo";
+// import Demo from "./components/projectFour/Demo";
+
+
+//Project Five 
+import CounterWithRedux from './components/ProjectFive/CounterWithRedux'
+
+
 export default function App() {
   return (
     <>
@@ -24,7 +30,12 @@ export default function App() {
       {/* <DemoComponent /> */}
 
       {/* Project Four */}
-      <Demo />
+      {/* <Demo /> */}
+
+
+      {/* Project Five */}
+
+      <CounterWithRedux />
     </>
   );
 }
