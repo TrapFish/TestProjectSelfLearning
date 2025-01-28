@@ -13,7 +13,12 @@
 
 
 //Project Five 
-import CounterWithRedux from './components/ProjectFive/CounterWithRedux'
+// import CounterWithRedux from './components/ProjectFive/CounterWithRedux'
+
+//Project Six
+import Timer from './components/ProjectSix/Timer';
+import ParentComponent from './components/ProjectSix/ParentComponent';
+import {ThemeContextProvider} from './components/ProjectSix/Context/ThemeContext';
 
 
 export default function App() {
@@ -35,7 +40,13 @@ export default function App() {
 
       {/* Project Five */}
 
-      <CounterWithRedux />
+      {/* <CounterWithRedux /> */}
+
+      <Timer />
+      <ThemeContextProvider>
+          <ParentComponent />
+      </ThemeContextProvider>
+     
     </>
   );
 }
