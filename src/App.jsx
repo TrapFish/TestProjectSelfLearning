@@ -21,7 +21,11 @@
 // import {ThemeContextProvider} from './components/ProjectSix/Context/ThemeContext';
 
 //Project Seven
-import CustomRouter from './components/ProjectSeven/CustomRouter';
+// import CustomRouter from './components/ProjectSeven/CustomRouter';
+
+//Projrct Eight
+import Test from './components/perojectEight/Test';
+import TestWithObject from './components/perojectEight/TestWithObject';
 
 export default function App() {
   return (
@@ -50,7 +54,11 @@ export default function App() {
       </ThemeContextProvider> */}
 
       {/* Project Seven */}
-       <CustomRouter />
+       {/* <CustomRouter /> */}
+
+      {/* Project Eight */}
+      <Test />
+      <TestWithObject />
     </>
   );
 }
