@@ -16,10 +16,12 @@
 // import CounterWithRedux from './components/ProjectFive/CounterWithRedux'
 
 //Project Six
-import Timer from './components/ProjectSix/Timer';
-import ParentComponent from './components/ProjectSix/ParentComponent';
-import {ThemeContextProvider} from './components/ProjectSix/Context/ThemeContext';
+// import Timer from './components/ProjectSix/Timer';
+// import ParentComponent from './components/ProjectSix/ParentComponent';
+// import {ThemeContextProvider} from './components/ProjectSix/Context/ThemeContext';
 
+//Project Seven
+import CustomRouter from './components/ProjectSeven/CustomRouter';
 
 export default function App() {
   return (
@@ -41,12 +43,14 @@ export default function App() {
       {/* Project Five */}
 
       {/* <CounterWithRedux /> */}
-
+{/* 
       <Timer />
       <ThemeContextProvider>
           <ParentComponent />
-      </ThemeContextProvider>
-     
+      </ThemeContextProvider> */}
+
+      {/* Project Seven */}
+       <CustomRouter />
     </>
   );
 }
