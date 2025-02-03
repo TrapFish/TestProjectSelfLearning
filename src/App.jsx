@@ -24,8 +24,11 @@
 // import CustomRouter from './components/ProjectSeven/CustomRouter';
 
 //Projrct Eight
-import Test from './components/perojectEight/Test';
-import TestWithObject from './components/perojectEight/TestWithObject';
+// import Test from './components/perojectEight/Test';
+// import TestWithObject from './components/perojectEight/TestWithObject';
+
+//Project Nine
+import Flipcard from './components/projectNine/Flipcard';
 
 export default function App() {
   return (
@@ -57,8 +60,11 @@ export default function App() {
        {/* <CustomRouter /> */}
 
       {/* Project Eight */}
-      <Test />
-      <TestWithObject />
+      {/* <Test />
+      <TestWithObject /> */}
+
+      {/* Project Nine */}
+      <Flipcard />
     </>
   );
 }
