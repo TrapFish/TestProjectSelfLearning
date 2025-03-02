@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useDebounce from './useDebounce';
 
 const ProductCard = ({ image, title }) => {
     return (
@@ -16,10 +17,13 @@ const PAGE_SIZE = 10;
 function Pagination() {
     const [productData, setProductData] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
+    const [searchTearm, setSearchTearm] = useState('');
+ 
+    const debouncedSearchTerm = useDebounce(searchTearm, 500);
 
     const fetchData = async () => {
         try {
-            const fetchProduct = await fetch("https://dummyjson.com/products?total=195");
+            const fetchProduct = await fetch("https://dummyjson.com/products");
             const productDataRecieved = await fetchProduct.json();
             setProductData(productDataRecieved.products);
         } catch (error) {
@@ -30,6 +34,21 @@ function Pagination() {
     useEffect(() => {
         fetchData();
     }, []);
+
+    useEffect(() => {
+        if(debouncedSearchTerm){
+            const fetchData = async () => {
+                try {
+                    const fetchProduct = await fetch(`https://dummyjson.com/products/search?q=${debouncedSearchTerm}`);
+                    const productDataRecieved = await fetchProduct.json();
+                    setProductData(productDataRecieved.products);
+                } catch (error) {
+                    console.log("Error")
+                }
+            }
+            fetchData();
+        }
+    }, [debouncedSearchTerm]);
 
 
     const totalProducts = productData.length;
@@ -50,10 +69,14 @@ function Pagination() {
         setCurrentPage(prev=>prev-1);
     }
 
+    const handleSerchTerm = (e) => {
+        setSearchTearm(e.target.value);
+    }
 
     return !productData.length ? (<><h1>No record found</h1></>) : (
         <div className="container">
             <h1>Pagination</h1>
+            <input type="text" placeholder='Search...'  value={searchTearm} onChange={handleSerchTerm}/>
 
             <div className="product-container">
               
