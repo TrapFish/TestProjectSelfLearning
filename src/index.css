@@ -152,3 +152,29 @@ input.invalid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.button-order{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.childRender{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f0b322;
+  height: 400px;
+  min-height: 300px;
+}
+
+.interest-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

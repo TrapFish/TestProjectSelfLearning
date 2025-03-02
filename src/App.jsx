@@ -27,8 +27,11 @@
 // import Test from './components/perojectEight/Test';
 // import TestWithObject from './components/perojectEight/TestWithObject';
 
-//Project Nine
-import Flipcard from './components/projectNine/Flipcard';
+// //Project Nine
+// import Flipcard from './components/projectNine/Flipcard';
+
+//Project Ten
+import TabForm from './components/projectTen/TabForm';
 
 export default function App() {
   return (
@@ -64,7 +67,10 @@ export default function App() {
       <TestWithObject /> */}
 
       {/* Project Nine */}
-      <Flipcard />
+      {/* <Flipcard /> */}
+
+      {/* Project Ten */}
+      <TabForm />
     </>
   );
 }
