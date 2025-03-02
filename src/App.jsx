@@ -30,8 +30,12 @@
 // //Project Nine
 // import Flipcard from './components/projectNine/Flipcard';
 
-//Project Ten
-import TabForm from './components/projectTen/TabForm';
+// //Project Ten
+// import TabForm from './components/projectTen/TabForm';
+
+//Project Eleven
+import Pagination from "./components/projectEleven/Pagination";
+import './index.css';
 
 export default function App() {
   return (
@@ -69,8 +73,11 @@ export default function App() {
       {/* Project Nine */}
       {/* <Flipcard /> */}
 
-      {/* Project Ten */}
-      <TabForm />
+      {/* Project Ten Zepto Interview*/}
+      {/* <TabForm /> */}
+
+      {/* Project Eleven Pagination */}
+      <Pagination />
     </>
   );
 }
